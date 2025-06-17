@@ -4,29 +4,137 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Advanced Physics Lab Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; max-width: 800px; margin: 2rem auto; padding: 0 1rem; line-height: 1.6; }
-    h1 { text-align: center; margin-bottom: 0.5rem; }
-    p { text-align: center; font-style: italic; margin-top: 0; }
-    ul { list-style: none; padding: 0; }
-    li { margin: 1rem 0; }
-    a { text-decoration: none; color: #0366d6; }
-    a:hover { text-decoration: underline; }
+    :root {
+      --primary-color: #1a237e;
+      --accent-color: #ffc107;
+      --bg-color: #f4f7fa;
+      --card-bg: #ffffff;
+      --font-heading: 'Merriweather', serif;
+      --font-body: 'Open Sans', sans-serif;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg-color) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" fill-opacity="0.05"><circle cx="200" cy="200" r="150" fill="none" stroke="%231a237e" stroke-width="2" stroke-dasharray="4,8"/></svg>') center/cover;
+      font-family: var(--font-body);
+      color: #333;
+      line-height: 1.6;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    header h1 {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 0.2rem;
+    }
+    header p.subtitle {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #555;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+    .labs {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .lab-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      transition: transform 0.2s;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .lab-card:hover {
+      transform: translateY(-5px);
+    }
+    .lab-card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+    .lab-card p {
+      flex-grow: 1;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    .lab-card a {
+      align-self: flex-start;
+      text-decoration: none;
+      background: var(--accent-color);
+      color: #1a237e;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .lab-card a:hover {
+      background: #e0a800;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+    footer a { color: var(--primary-color); text-decoration: none; }
   </style>
 </head>
 <body>
-  <h1>Advanced Physics Lab Portfolio</h1>
-  <p>Spring 2025 · Washington & Lee University</p>
-  <ul>
-    <li><a href="reports/Thin_Films.pdf" target="_blank">1. Determining the Optical Properties of a Thin Film</a></li>
-    <li><a href="reports/Hall_Effect.pdf" target="_blank">2. Identifying Charge Carrier Type and Density: The Hall Effect</a></li>
-    <li><a href="reports/Muon_Lifetime_Analysis.pdf" target="_blank">3. Muon Decay and Lifetime Analysis</a></li>
-    <li><a href="reports/Simple_Pendulum.pdf" target="_blank">4. Measuring the Period of a Simple Pendulum</a></li>
-    <li><a href="reports/Two_Slit_Interference.pdf" target="_blank">5. Single Photon Two-Slit Interference</a></li>
-  </ul>
-  <footer>
-    <p>All reports are available under the MIT License. View the source on <a href="https://github.com/your-username/advanced-physics-lab">GitHub</a>.</p>
-  </footer>
+  <div class="container">
+    <header>
+      <h1>Advanced Physics Lab Portfolio</h1>
+      <p class="subtitle">Spring 2025 · Washington &amp; Lee University</p>
+    </header>
+
+    <section class="labs">
+      <div class="lab-card">
+        <h2>Determining the Optical Properties of a Thin Film</h2>
+        <p>Analyzed interference fringes to extract refractive index and thickness with ≤1% uncertainty.</p>
+        <a href="reports/Thin_Films.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="lab-card">
+        <h2>Identifying Charge Carrier Type and Density: The Hall Effect</h2>
+        <p>Measured Hall voltage to determine carrier polarity and concentration in semiconductor samples.</p>
+        <a href="reports/Hall_Effect.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="lab-card">
+        <h2>Muon Decay and Lifetime Analysis</h2>
+        <p>Fitted decay curve data to extract muon lifetime; compared results to theoretical predictions.</p>
+        <a href="reports/Muon_Lifetime_Analysis.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="lab-card">
+        <h2>Measuring the Period of a Simple Pendulum</h2>
+        <p>Investigated length and amplitude effects on pendulum period; validated small-angle approximation.</p>
+        <a href="reports/Simple_Pendulum.pdf" target="_blank">View PDF</a>
+      </div>
+
+      <div class="lab-card">
+        <h2>Single Photon Two-Slit Interference</h2>
+        <p>Demonstrated wave-particle duality with low-intensity light; recorded and analyzed interference patterns.</p>
+        <a href="reports/Two_Slit_Interference.pdf" target="_blank">View PDF</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>All reports are available under the MIT License. View the source on <a href="https://github.com/your-username/advanced-physics-lab">GitHub</a>.</p>
+    </footer>
+  </div>
 </body>
 </html>
-
